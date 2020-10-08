@@ -18,12 +18,40 @@
         اللي إنت اتابعها Animeتحتوي على مسلسلات ال myAnime المصفوفة الأولى
         اللي رفيجك يتابعها Animeتحتوي على مسلسلات ال myFriendAnime المصفوفة الثانية
       */
+          let myAnime = ['one pace' , 'Zoro'];
+          let myFriendAnime = ['Zoro' , 'Atack of titan'];
 
+      
       // 2
       // mutualAnime عرف مصفوفة فاضية سمها
+      function findCommonElements2(arr1, arr2) { 
+      
+  
+      let mutualAnime = {}; 
+            
+         
+          for (let i = 0; i < arr1.length; i++) { 
+          
+              if(!mutualAnime[arr1[i]]) { 
+               
+                  const element = arr1[i]; 
+                  mutualAnime[element] = true; 
+              } 
+          } 
+          for (let j = 0; j < arr2.length ; j++) { 
+         
+          if(mutualAnime[arr2[j]]) { 
+              return mutualAnime; 
+          } 
+      } 
+   
+  } 
+    
+  document.write(findCommonElements2(myAnime, myFriendAnime))
+
 
       // mutualAnimeقارن المصفوفتين وضيف المسلسلات المشتركة ل
-
+         
       // consoleفي ال mutualAnime اطبع
       // ما طبع؟ أكيد في شي ناقص، عرفته؟
 
