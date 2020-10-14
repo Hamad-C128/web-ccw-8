@@ -18,40 +18,36 @@
         اللي إنت اتابعها Animeتحتوي على مسلسلات ال myAnime المصفوفة الأولى
         اللي رفيجك يتابعها Animeتحتوي على مسلسلات ال myFriendAnime المصفوفة الثانية
       */
-          let myAnime = ['one pace' , 'Zoro'];
-          let myFriendAnime = ['Zoro' , 'Atack of titan'];
 
-      
+      let myAnime = [
+        "blacklist" , "sherlock" , "fb fb" , "fvvdc" , "fvfv"
+      ]
+
+      let myFriendAnime = [
+        "sherlock" , " stranger things " , "rbd" , "fb fb" , "fvfv"
+      ]
+
+      let mutualAnime = []
+
+      myAnime.forEach(element => {
+      for (let a = 0; a < myFriendAnime.length; a++) {
+      if (myFriendAnime[a]==element) {
+
+        mutualAnime.push(element)
+        
+      }
+        
+      }
+    });
+
+      // console.log(mutualAnime)
       // 2
       // mutualAnime عرف مصفوفة فاضية سمها
-      function findCommonElements2(arr1, arr2) { 
-      
-  
-      let mutualAnime = {}; 
-            
-         
-          for (let i = 0; i < arr1.length; i++) { 
-          
-              if(!mutualAnime[arr1[i]]) { 
-               
-                  const element = arr1[i]; 
-                  mutualAnime[element] = true; 
-              } 
-          } 
-          for (let j = 0; j < arr2.length ; j++) { 
-         
-          if(mutualAnime[arr2[j]]) { 
-              return mutualAnime; 
-          } 
-      } 
-   
-  } 
+
     
-  document.write(findCommonElements2(myAnime, myFriendAnime))
 
+      // mutualAnimeقارن المصفوفتين وضيف المسلسلات المشتركة 
 
-      // mutualAnimeقارن المصفوفتين وضيف المسلسلات المشتركة ل
-         
       // consoleفي ال mutualAnime اطبع
       // ما طبع؟ أكيد في شي ناقص، عرفته؟
 
@@ -62,7 +58,7 @@
       ul.className = "myList";
       document.getElementById("container").appendChild(ul);
 
-      function createList(arr) {
+      function createList() {
         mutualAnime.forEach(function (data) {
           let li = document.createElement("li");
           ul.appendChild(li);
@@ -70,6 +66,8 @@
           li.className = "listItem";
         });
       }
+      createList()
     </script>
   </body>
 </html>
+
